@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Illness Prediction</title>
+</head>
+<body>
+    <h1>Illness Prediction Form</h1>
+
+    <form action="/predict" method="post">
+        <label for="city">City (code):</label><br>
+        <input type="text" id="city" name="city" value="{{ city }}"><br><br>
+
+        <label for="gender">Gender (code):</label><br>
+        <input type="text" id="gender" name="gender" value="{{ gender }}"><br><br>
+
+        <label for="age">Age:</label><br>
+        <input type="text" id="age" name="age" value="{{ age }}"><br><br>
+
+        <label for="income">Income:</label><br>
+        <input type="text" id="income" name="income" value="{{ income }}"><br><br>
+
+        <input type="submit" value="Predict Illness">
+    </form>
+
+    {% if prediction_text %}
+        <h2>{{ prediction_text }}</h2>
+    {% endif %}
+</body>
+</html>
